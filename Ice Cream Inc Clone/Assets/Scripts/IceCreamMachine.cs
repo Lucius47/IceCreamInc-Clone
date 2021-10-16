@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class IceCreamMachine : BezierWalkerWithSpeed
 {
     public event System.Action OnLevelCompleted;        //Subscribed to by the LevelManager to show lvlCompleted popup.
-
+    
 
     [SerializeField]
     Transform creamFilter;                              //Transform from where the ice cream pieces instantiate.
@@ -71,7 +71,7 @@ public class IceCreamMachine : BezierWalkerWithSpeed
             iceCreamGO.transform.DOMove((spline.GetPoint(NormalizedT)), durationOfFallingPiece);
 
             iceCreamGO.transform.SetParent(iceCreamCone);
-
+            
         }
 
 
@@ -110,7 +110,7 @@ public class IceCreamMachine : BezierWalkerWithSpeed
                                                         // 3 seconds after the level is completed, the ice cream 
                                                         // pieces are destroyed before their Tween is finished.
                                                         // This causes DGTween to issue a low-level warning.
-                                                        // However it does not have any significant effect.
+                                                        // However it does not affect anything.
         }
     }
 
